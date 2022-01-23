@@ -1,15 +1,18 @@
 ﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-public interface IRepository<TEntity> where TEntity : class, TEntity
+namespace Repositories
 {
-    void Isert(TEntity entity);
+    public interface IRepository<TEntity> where TEntity : class, TEntity
+    {
+        void Isert(TEntity entity);
 
-    void Update(TEntity entity);
+        void Update(TEntity entity);
 
-    void Delete(TEntity entity);
+        void Delete(TEntity entity);
 
-    Task<TEntity> GetByIdAsync(object id);
+        Task<TEntity> GetByIdAsync(object id);
 
-    Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, params string[] includeProperties);
+        Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, params string[] includeProperties);
+    }
 }

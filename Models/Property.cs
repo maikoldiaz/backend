@@ -1,4 +1,5 @@
-public class Property{
+namespace Models{
+    public class Property{
     public int IdProperty { get; set; }
     public string Name { get; set; }
     public string Address { get; set; }
@@ -6,4 +7,5 @@ public class Property{
     public string CodeInternal { get; set; }
     public int Year { get; set; }
     
+}
 }
